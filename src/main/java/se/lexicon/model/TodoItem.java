@@ -65,7 +65,7 @@ public class TodoItem {
         this.creator = creator;
     }
     public String getSummary(){
-       return "Description of the object-> id: " + id1 + "Title: " + title1 + "Task description: " + taskDescription1 + "Dead line: " + deadLine1 + "Done: " + done1 +"Creator: " + creator + "\n";
+       return "Description of the Todo Item-> id: " + id1 + "Title: " + title1 + "Task description: " + taskDescription1 + "Dead line: " + deadLine1 + "Done: " + done1 +"Creator: " + creator + "\n";
     }
     public boolean isOverdue(){
         LocalDate  currentDate= LocalDate.now();

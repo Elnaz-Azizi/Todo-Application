@@ -4,7 +4,7 @@ public class TodoItemTask {
     //Field:
     private int id1;
     private boolean assigned;
-    private TodoItem todoItem;
+    private TodoItemTask todoItemTask;
     private Person assignee;
 
     //Methods:
@@ -26,12 +26,12 @@ public class TodoItemTask {
         this.assigned = assigned;
     }
 
-    public TodoItem getTodoItem() {
-        return todoItem;
+    public TodoItemTask getTodoItemTask() {
+        return todoItemTask;
     }
 
-    public void setTodoItem(TodoItem todoItem) {
-        this.todoItem = todoItem;
+    public void setTodoItemTask(TodoItemTask todoItemTask) {
+        this.todoItemTask = todoItemTask;
     }
 
     public Person getAssignee() {
@@ -42,6 +42,6 @@ public class TodoItemTask {
         this.assignee = assignee;
     }
     public String getSummary() {
-        return "Description of the task-> id: " + id1 + "Assigned: " + assigned + "Todo item: " + todoItem + "Assignee: " + assignee + "\n";
+        return "Description of the task-> id: " + id1 + "Assigned: " + assigned + "Todo item: " + todoItemTask + "Assignee: " + assignee + "\n";
     }
 }

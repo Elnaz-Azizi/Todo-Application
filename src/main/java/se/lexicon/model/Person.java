@@ -7,7 +7,6 @@ public class Person {
     private String firstName1;
     private String lastName1;
     private String email1;
-    private TodoItem[] personDoTask;
 
 
     // Constructors
@@ -47,7 +46,7 @@ public class Person {
     }
 
     public String getSummary() {
-        return "Description of the object-> id: " + id1 + "First name: " + firstName1 + "Last name: " + lastName1 + "Email address: " + email1 + "\n";
+        return "Person Information-> id: " + id1 + "First name: " + firstName1 + "Last name: " + lastName1 + "Email address: " + email1 + "\n";
     }
 
     // Methods
