@@ -21,14 +21,16 @@ public class Person {
     public void setId1(int id1) {
         this.id1 = id1;
     }
-    public String getFirstName1(){
+
+    public String getFirstName1() {
         return firstName1;
     }
 
     public void setFirstName1(String firstName1) {
         this.firstName1 = firstName1;
     }
-    public String getLastName1 () {
+
+    public String getLastName1() {
         return lastName1;
     }
 
@@ -44,8 +46,8 @@ public class Person {
         this.email1 = email1;
     }
 
-    public void getSummary(){
-        System.out.println("Description of the object-> id: " + id1 + "First name: " + firstName1 + "Last name: " + lastName1 + "Email address: " + email1 + "\n");
+    public String getSummary() {
+        return "Description of the object-> id: " + id1 + "First name: " + firstName1 + "Last name: " + lastName1 + "Email address: " + email1 + "\n";
     }
 
     // Methods
