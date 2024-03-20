@@ -3,50 +3,64 @@ package se.lexicon.model;
 public class Person {
 
     // Fields
-    private int id1;
-    private String firstName1;
-    private String lastName1;
-    private String email1;
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String email;
 
 
     // Constructors
 
-    // Setters  Getters
-
-    public int getId1() {
-        return id1;
+    public Person(int id, String firstName, String lastName, String email) {
+        this(id, firstName, lastName);
+        setEmail(email);
     }
 
-    public void setId1(int id1) {
-        this.id1 = id1;
+    public Person(int id, String firstName, String lastName) {
+        setId(id);
+        setFirstName(firstName);
+        setLastName(lastName);
+    }
+// Setters  Getters
+
+    public int getId() {
+        return id;
     }
 
-    public String getFirstName1() {
-        return firstName1;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setFirstName1(String firstName1) {
-        this.firstName1 = firstName1;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getLastName1() {
-        return lastName1;
+    public void setFirstName(String firstName) {
+        if (firstName == null) {
+            throw new IllegalArgumentException("first name should not be null.");
+        }
+
+        this.firstName = firstName;
     }
 
-    public void setLastName1(String lastName1) {
-        this.lastName1 = lastName1;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getEmail1() {
-        return email1;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setEmail1(String email1) {
-        this.email1 = email1;
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSummary() {
-        return "Person Information-> id: " + id1 + "First name: " + firstName1 + "Last name: " + lastName1 + "Email address: " + email1 + "\n";
+        return "Person Information-> id: " + id + ", First name: " + firstName + ", Last name: " + lastName + ", Email address: " + email + "\n";
     }
 
     // Methods

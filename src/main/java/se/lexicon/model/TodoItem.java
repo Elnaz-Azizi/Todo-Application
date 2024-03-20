@@ -6,55 +6,55 @@ public class TodoItem {
 
     // Field
 
-    private int id1;
-    private String title1;
-    private String taskDescription1;
-    private LocalDate deadLine1;
-    private boolean done1;
+    private int id;
+    private String title;
+    private String taskDescription;
+    private LocalDate deadLine;
+    private boolean done;
     private Person creator;
 
     //constructor
 
     //methods
 
-    public int getId1() {
-        return id1;
+    public int getId() {
+        return id;
     }
 
-    public void setId1(int id1) {
-        this.id1 = id1;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getTitle1() {
-        return title1;
+    public String getTitle() {
+        return title;
     }
 
-    public void setTitle1(String title1) {
-        this.title1 = title1;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getTaskDescription1() {
-        return taskDescription1;
+    public String getTaskDescription() {
+        return taskDescription;
     }
 
-    public void setTaskDescription1(String taskDescription1) {
-        this.taskDescription1 = taskDescription1;
+    public void setTaskDescription(String taskDescription) {
+        this.taskDescription = taskDescription;
     }
 
-    public LocalDate getDeadLine1() {
-        return deadLine1;
+    public LocalDate getDeadLine() {
+        return deadLine;
     }
 
-    public void setDeadLine1(LocalDate deadLine1) {
-        this.deadLine1 = deadLine1;
+    public void setDeadLine(LocalDate deadLine) {
+        this.deadLine = deadLine;
     }
 
-    public boolean isDone1() {
-        return done1;
+    public boolean isDone() {
+        return done;
     }
 
-    public void setDone1(boolean done1) {
-        this.done1 = done1;
+    public void setDone(boolean done) {
+        this.done = done;
     }
 
     public Person getCreator() {
@@ -65,11 +65,11 @@ public class TodoItem {
         this.creator = creator;
     }
     public String getSummary(){
-       return "Description of the Todo Item-> id: " + id1 + "Title: " + title1 + "Task description: " + taskDescription1 + "Dead line: " + deadLine1 + "Done: " + done1 +"Creator: " + creator + "\n";
+       return "Description of the Todo Item-> id: " + id + ", Title: " + title + ", Task description: " + taskDescription + ", Dead line: " + deadLine + ", Done: " + done +", Creator: " + creator.getFirstName() + "\n";
     }
     public boolean isOverdue(){
         LocalDate  currentDate= LocalDate.now();
-        return currentDate.isAfter(deadLine1);
+        return currentDate.isAfter(deadLine);
     }
 
 }

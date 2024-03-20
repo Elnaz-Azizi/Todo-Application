@@ -13,34 +13,36 @@ public class App {
 
     public static void main(String[] args) {
 
-        Person person = new Person();
-        person.setId1(19);
-        person.setFirstName1("Elnaz");
-        person.setLastName1("Azizi");
-        person.setEmail1("azizi.elnaz@example.com");
-        System.out.println(person.getSummary());
+        Person elnaz = new Person(1,"Elnaz", "Azizi","elnaz.azizi@test.se");
+        /*elnaz.setId(1);
+        elnaz.setFirstName("Elnaz");
+        elnaz.setLastName("Azizi");
+        elnaz.setEmail("azizi.elnaz@example.com");*/
 
-        TodoItem todoItem = new TodoItem();
-        todoItem.setId1(12345);
-        todoItem.setTitle1("Complete Todo IT Assignment");
-        todoItem.setTaskDescription1("Finish the Person part");
-        todoItem.setDeadLine1(LocalDate.of(2024, 03, 25));
-        todoItem.setDone1(false);
+        System.out.println(elnaz.getSummary());
 
-        System.out.println(todoItem.getSummary());
+        Person test = new Person(2,"test", "test");
+        System.out.println(test.getSummary());
 
-        if (todoItem.isOverdue()) {
-            System.out.println("Deadline is overdue.");
-        } else {
-            System.out.println("Deadline is not yet overdue.");
-        }
+
+        TodoItem task1 = new TodoItem();
+        task1.setId(10);
+        task1.setTitle("Complete Todo IT Assignment");
+        task1.setTaskDescription("Finish the Person part");
+        task1.setDeadLine(LocalDate.of(2024, 3, 25));
+        task1.setCreator(elnaz);
+        System.out.println(task1.getSummary());
+        System.out.println(task1.isOverdue());
 
         TodoItemTask todoItemTask = new TodoItemTask();
-        todoItemTask.setId1(345);
-        todoItemTask.setAssigned(true);
-       todoItemTask.setTodoItemTask(todoItemTask);
-       todoItemTask.setAssignee(person);
+        todoItemTask.setTodoItem(task1);
+        todoItemTask.setAssignee(test);
+
         System.out.println(todoItemTask.getSummary());
+
+
+
+
 
     }
 }

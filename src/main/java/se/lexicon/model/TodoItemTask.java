@@ -2,36 +2,32 @@ package se.lexicon.model;
 
 public class TodoItemTask {
     //Field:
-    private int id1;
+    private int id;
     private boolean assigned;
-    private TodoItemTask todoItemTask;
+    private TodoItem todoItem;
     private Person assignee;
 
     //Methods:
 
 
-    public int getId1() {
-        return id1;
+    public int getId() {
+        return id;
     }
 
-    public void setId1(int id1) {
-        this.id1 = id1;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public boolean isAssigned() {
         return assigned;
     }
 
-    public void setAssigned(boolean assigned) {
-        this.assigned = assigned;
+    public TodoItem getTodoItem() {
+        return todoItem;
     }
 
-    public TodoItemTask getTodoItemTask() {
-        return todoItemTask;
-    }
-
-    public void setTodoItemTask(TodoItemTask todoItemTask) {
-        this.todoItemTask = todoItemTask;
+    public void setTodoItem(TodoItem todoItem) {
+        this.todoItem = todoItem;
     }
 
     public Person getAssignee() {
@@ -40,8 +36,10 @@ public class TodoItemTask {
 
     public void setAssignee(Person assignee) {
         this.assignee = assignee;
+        this.assigned = true;
     }
+
     public String getSummary() {
-        return "Description of the task-> id: " + id1 + "Assigned: " + assigned + "Todo item: " + todoItemTask + "Assignee: " + assignee + "\n";
+        return "Description of the task-> id: " + id + "Assigned: " + assigned + "Todo item: " + todoItem.getTitle() + "Assignee: " + assignee.getFirstName() + "\n";
     }
 }
