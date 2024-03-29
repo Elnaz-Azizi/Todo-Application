@@ -1,5 +1,7 @@
 package se.lexicon.model;
 
+import java.util.Objects;
+
 public class Person {
 
     // Fields
@@ -7,9 +9,16 @@ public class Person {
     private String firstName;
     private String lastName;
     private String email;
+    private AppUser credentials;
 
+    public Person(int id, String firstName, String lastName, String email, AppUser credentials) {
+        setId(id);
+        setFirstName(firstName);
+        setLastName(lastName);
+        setEmail(email);
+        setCredentials(credentials);
+    }
 
-    // Constructors
 
     public Person(int id, String firstName, String lastName, String email) {
         this(id, firstName, lastName);
@@ -59,10 +68,36 @@ public class Person {
         this.email = email;
     }
 
-    public String getSummary() {
-        return "Person Information-> id: " + id + ", First name: " + firstName + ", Last name: " + lastName + ", Email address: " + email + "\n";
+    public AppUser getCredentials() {
+        return credentials;
     }
 
+    public void setCredentials(AppUser credentials) {
+        this.credentials = credentials;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName) && Objects.equals(email, person.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, firstName, lastName, email);
+    }
     // Methods
 
 }
